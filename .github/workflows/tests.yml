@@ -28,17 +28,17 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Cache dependencies
-        uses: actions/cache@v5.0.3
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
 
         with:
           path: ~/.composer/cache/files
           key: dependencies-laravel-${{ matrix.laravel }}-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.37.0
+        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # 2.37.0
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
@@ -64,16 +64,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Cache dependencies
-        uses: actions/cache@v5.0.3
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
           path: ~/.composer/cache/files
           key: analysis-php-8.4-composer-${{ hashFiles('composer.json') }}
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.37.0
+        uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # 2.37.0
         with:
           php-version: "8.4"
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
